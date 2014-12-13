@@ -1,0 +1,8 @@
+services:
+    dmzx.membertimecounter.listener:
+        class: dmzx\membertimecounter\event\listener
+        arguments:
+            - @template
+        tags:
+            - { name: event.listener }
+ 
