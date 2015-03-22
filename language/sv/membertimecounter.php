@@ -6,7 +6,7 @@
 * Swedish translation by Holger (http://www.maskinisten.net)
 * @copyright (c) 2014 by dmzx (www.dmzx-web.net)
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License
-* 
+*
 */
 
 if (!defined('IN_PHPBB'))
@@ -36,5 +36,5 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, array(
-    'MEMBER_FOR' => 'Medlem sedan',
+	'MEMBER_FOR' => 'Medlem sedan',
 ));
