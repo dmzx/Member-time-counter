@@ -6,7 +6,7 @@
 * @author dmzx (www.dmzx-web.net)
 * @copyright (c) 2014 by dmzx (www.dmzx-web.net)
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License
-*
+* 
 */
 
 namespace dmzx\membertimecounter\event;
@@ -20,6 +20,8 @@ class listener implements EventSubscriberInterface
 {
 	protected $template;
 
+    protected $user;
+
 	static public function getSubscribedEvents()
 	{
 		return array(
@@ -28,17 +30,18 @@ class listener implements EventSubscriberInterface
 		);
 	}
 
-	public function __construct(\phpbb\template\template $template)
+	public function __construct(\phpbb\template\template $template, \phpbb\user $user)
 	{
 		$this->template = $template;
+		$this->user = $user;
 	}
 
 	public function memberlist_view_profile($event)
 	{
-		$member_for = date('d M Y, H:i:s', ($event['member']['user_regdate']));
-
+	    $member_for = $this->user->format_date($event['member']['user_regdate']);
+	
 		$this->template->assign_vars(array(
-			'MEMBER_FOR'	 => $member_for,
+			'MEMBER_FOR'     => $member_for,
 		));
 	}
 	public function load_language_on_setup($event)
