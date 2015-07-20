@@ -35,7 +35,7 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, array(
-	'MEMBER_FOR' => 'عضو شده برای :',
+	'MEMBER_FOR' => 'عضو شده برای ',
 	'YEARS' => 'سال',
 	'MONTHS' => 'ماه',
 	'AND' => 'و',
