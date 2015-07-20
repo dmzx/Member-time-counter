@@ -38,7 +38,9 @@ class listener implements EventSubscriberInterface
 
 	public function memberlist_view_profile($event)
 	{
-		$member_for = $this->user->format_date($event['member']['user_regdate']);
+
+		$reg_date = phpbb_gmgetdate($event['member']['user_regdate']);
+		$member_for = $reg_date['mday'] . ' ' . $reg_date['month'] . ' ' . $reg_date['year'] . ', ' . $reg_date['hours'] . ':' . $reg_date['minutes'] . ':' . $reg_date['seconds'];
 
 		$this->template->assign_vars(array(
 			'MEMBER_FOR'	 => $member_for,
