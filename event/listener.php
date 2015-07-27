@@ -1,5 +1,4 @@
 <?php
-
 /**
 *
 * @package Member time counter
@@ -18,22 +17,31 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class listener implements EventSubscriberInterface
 {
+	/** @var \phpbb\template\template */
 	protected $template;
 
+	/** @var \phpbb\user */
 	protected $user;
-
-	static public function getSubscribedEvents()
-	{
-		return array(
-			'core.user_setup' => 'load_language_on_setup',
-			'core.memberlist_view_profile'		=> 'memberlist_view_profile',
-		);
-	}
-
+	
+	/**
+	* Constructor
+	*
+	* @param \phpbb\template\template $template
+	* @param \phpbb\user $user
+	*/
+	
 	public function __construct(\phpbb\template\template $template, \phpbb\user $user)
 	{
 		$this->template = $template;
 		$this->user = $user;
+	}
+	
+	static public function getSubscribedEvents()
+	{
+		return array(
+			'core.user_setup'	=> 'load_language_on_setup',
+			'core.memberlist_view_profile'	=> 'memberlist_view_profile',
+		);
 	}
 
 	public function memberlist_view_profile($event)
@@ -46,6 +54,7 @@ class listener implements EventSubscriberInterface
 			'MEMBER_FOR'	 => $member_for,
 		));
 	}
+	
 	public function load_language_on_setup($event)
 	{
 		$lang_set_ext = $event['lang_set_ext'];
