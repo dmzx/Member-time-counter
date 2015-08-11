@@ -22,20 +22,20 @@ class listener implements EventSubscriberInterface
 
 	/** @var \phpbb\user */
 	protected $user;
-	
+
 	/**
 	* Constructor
 	*
 	* @param \phpbb\template\template $template
 	* @param \phpbb\user $user
 	*/
-	
+
 	public function __construct(\phpbb\template\template $template, \phpbb\user $user)
 	{
 		$this->template = $template;
 		$this->user = $user;
 	}
-	
+
 	static public function getSubscribedEvents()
 	{
 		return array(
@@ -54,7 +54,7 @@ class listener implements EventSubscriberInterface
 			'MEMBER_FOR'	 => $member_for,
 		));
 	}
-	
+
 	public function load_language_on_setup($event)
 	{
 		$lang_set_ext = $event['lang_set_ext'];
