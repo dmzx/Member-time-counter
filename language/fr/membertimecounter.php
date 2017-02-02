@@ -1,13 +1,17 @@
 <?php
 /**
 *
-* @package Member time counter
-* @author dmzx (www.dmzx-web.net)
-* @copyright (c) 2014 by dmzx (www.dmzx-web.net)
-* @license http://opensource.org/licenses/gpl-license.php GNU Public License
+* Member time counter extension for the phpBB Forum Software package.
+* French translation by Taka5124 (http://webdvdbdhd.com) & Galixte (http://www.galixte.com)
+*
+* @copyright (c) 2015 dmzx <http://www.dmzx-web.net>
+* @license GNU General Public License, version 2 (GPL-2.0)
 *
 */
 
+/**
+* DO NOT CHANGE
+*/
 if (!defined('IN_PHPBB'))
 {
 	exit;
@@ -31,12 +35,12 @@ if (empty($lang) || !is_array($lang))
 // in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
 //
 // Some characters you may want to copy&paste:
-// ’ » “ ” …
+// ’ « » “ ” …
 //
 
 $lang = array_merge($lang, array(
 	'MEMBER_FOR' => 'Membre depuis',
-	'YEARS' => 'Ans',
-	'MONTHS' => 'Mois',
+	'YEARS' => 'an(s)',
+	'MONTHS' => 'mois',
 	'AND' => 'et',
 ));
