@@ -1,10 +1,9 @@
 <?php
 /**
 *
-* @package Member time counter
-* @author dmzx (www.dmzx-web.net)
-* @copyright (c) 2014 by dmzx (www.dmzx-web.net)
-* @license http://opensource.org/licenses/gpl-license.php GNU Public License
+* @package phpBB Extension - Member time counter
+* @copyright (c) 2014 dmzx - http://www.dmzx-web.net
+* @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
 *
 */
 
@@ -29,8 +28,10 @@ class listener implements EventSubscriberInterface
 	* @param \phpbb\template\template $template
 	* @param \phpbb\user $user
 	*/
-
-	public function __construct(\phpbb\template\template $template, \phpbb\user $user)
+	public function __construct(
+		\phpbb\template\template $template,
+		\phpbb\user $user
+	)
 	{
 		$this->template = $template;
 		$this->user = $user;
@@ -46,7 +47,6 @@ class listener implements EventSubscriberInterface
 
 	public function memberlist_view_profile($event)
 	{
-
 		$reg_date = phpbb_gmgetdate($event['member']['user_regdate']);
 		$member_for = $reg_date['mday'] . ' ' . $reg_date['month'] . ' ' . $reg_date['year'] . ', ' . $reg_date['hours'] . ':' . $reg_date['minutes'] . ':' . $reg_date['seconds'];
 

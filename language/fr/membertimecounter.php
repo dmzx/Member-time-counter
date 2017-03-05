@@ -1,10 +1,9 @@
 <?php
 /**
 *
-* @package Member time counter
-* @author dmzx (www.dmzx-web.net)
-* @copyright (c) 2014 by dmzx (www.dmzx-web.net)
-* @license http://opensource.org/licenses/gpl-license.php GNU Public License
+* @package phpBB Extension - Member time counter
+* @copyright (c) 2014 dmzx - http://www.dmzx-web.net
+* @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
 *
 */
 
@@ -35,8 +34,8 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, array(
-	'MEMBER_FOR' => 'Membre depuis',
-	'YEARS' => 'Ans',
-	'MONTHS' => 'Mois',
-	'AND' => 'et',
+	'MEMBER_FOR' 		=> 'Membre depuis',
+	'YEARS' 			=> 'Ans',
+	'MONTHS' 			=> 'Mois',
+	'AND' 				=> 'et',
 ));

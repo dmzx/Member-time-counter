@@ -1,11 +1,9 @@
 <?php
 /**
 *
-* @package Member time counter
-* @author dmzx (www.dmzx-web.net)
-* @copyright (c) 2014 by dmzx (www.dmzx-web.net)
-* @license http://opensource.org/licenses/gpl-license.php GNU Public License
-* Croatian translation by Ančica Sečan (http://ancica.sunceko.net)
+* @package phpBB Extension - Member time counter
+* @copyright (c) 2014 dmzx - http://www.dmzx-web.net
+* @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
 *
 */
 
